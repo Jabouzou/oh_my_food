@@ -1,0 +1,12 @@
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*@extend _ mieux vaut utiliser les placeholder car dans les mixin,
+le code s'écrit dans chaque élément du css
+alors que avec les pl, ça se met à la suite:
+h1, h2 { etc.
+    UTILISER LES MIXINS SEULEMENT QUAND ON A DES PARAMETRES
+    SINON ON UTILISE DES PLACESHOLDERS*/
