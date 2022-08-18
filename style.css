@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ***********************************************************************************************
 		Reset CSS
 *********************************************************************************************** */
@@ -365,6 +366,55 @@ textarea {
     width: 100%;
   }
 }
+.form, .logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  padding: 1rem;
+  font-size: 20px;
+}
+
+.btn_explorer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  box-shadow: 0px 4px 4px 1px #c5c5c5;
+  font-weight: bold;
+  padding: 1.5rem;
+}
+
+.btn_explorer {
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 400ms;
+}
+
+.btn_explorer {
+  background: linear-gradient(170deg, #ff79da, #9356dc);
+  color: white;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.3);
+}
+
+.choices ul > li p {
+  background-color: #9356dc;
+  color: white;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 2rem;
+  margin-left: -7rem;
+}
+
+/*@extend _ mieux vaut utiliser les placeholder car dans les mixin,
+le code s'écrit dans chaque élément du css
+alors que avec les pl, ça se met à la suite:
+h1, h2 { etc.
+    UTILISER LES MIXINS SEULEMENT QUAND ON A DES PARAMETRES
+    SINON ON UTILISE DES PLACESHOLDERS*/
 /**global**/
 * {
   box-sizing: border-box;
@@ -376,6 +426,7 @@ html {
 
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
   color: rgb(4, 4, 4);
   font-weight: 400;
   margin: 0px;
@@ -394,11 +445,21 @@ img {
 
 a {
   text-decoration: none;
-  color: rgb(157, 37, 37);
+  color: black;
 }
 
 li {
   list-style-type: none;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /*end global*/
@@ -409,33 +470,71 @@ label {
   left: -999px;
 }
 
-#logoheader {
-  display: flex;
-  justify-content: center;
-  height: 20px;
-  object-fit: cover;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  border-bottom-style: outset;
+.logo {
+  padding: 2rem 0 0.5rem;
+}
+.logo img {
+  width: 45%;
 }
 
-#localisation {
-  background-color: #eaeaea;
+.form {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 50px;
+  background-color: #eaeaea;
+  box-shadow: 0 0.2em 0.5em grey inset;
+  padding: 1rem;
 }
-#localisation p {
+.form p {
   margin-left: 15px;
 }
 
-header > section {
-  background-color: #f6f6f6;
-  height: 250px;
+#search {
+  border: none;
+  font-size: 1.5rem;
+  background: #eaeaea;
 }
 
-#headercontent {
+header > nav {
+  background: #f2f2f2;
+}
+
+.presentation {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.presentation nav {
+  width: 100%;
+  align-items: center;
+  padding: 0rem 2rem 2rem;
+  margin-top: 2rem;
+  background: #f2f2f2;
+}
+.presentation nav article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.choices {
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  padding: 1rem;
+  width: 85%;
+}
+.choices ul > li {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 5rem;
+  margin: 0 0 3rem 0;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #c4c4c4;
+  background-color: #f2f2f2;
+  gap: 1rem;
+  height: 6rem;
+}
+.exploration {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -444,23 +543,14 @@ header > section {
   margin: 0px 30px;
   height: 100%;
 }
-#headercontent h1 {
+.exploration h1 {
   font-weight: bold;
   font-size: 30px;
 }
 
-button, #explorationbutton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-style: solid;
-  box-shadow: 0px 4px 4px 1px #c5c5c5;
-  font-weight: bold;
+.btn_explorer {
+  width: auto;
   font-size: 21px;
-}
-button:hover, #explorationbutton:hover {
-  transform: scale(1.03);
 }
 
 #explorationbutton {
@@ -476,16 +566,60 @@ button:hover, #explorationbutton:hover {
   font-size: 21px;
 }
 
-#section1 {
+.articles {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 440px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #f2f2f2;
+  padding: 1rem 0;
 }
 
-h2 {
-  font-size: 30px;
-  font-weight: bold;
+.articles_title {
+  display: flex;
+  align-items: center;
+}
+
+.articles_content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  gap: 3rem;
+}
+
+.article_picture {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.article_picture img {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem 2rem 0 0;
+}
+.article_picture .bannier {
+  display: flex;
+  font-weight: 700;
+  padding: 0 1rem;
+  background: #99E2D0;
+  border-radius: 0.2rem;
+  color: #2c9c81;
+  line-height: 2rem;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.article_description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -2rem;
+  position: relative;
 }
 
 #section1 nav {
