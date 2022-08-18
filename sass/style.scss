@@ -2,7 +2,8 @@
 @import "libs/_mixins.scss";
 @import "libs/_reset.scss";
 @import "libs/_responsive.scss";
-@import "libs/responsive";
+@import "libs/_responsive";
+@import "libs/_placeholders";
 
 
 /**global**/
@@ -17,6 +18,7 @@ html {
 
 body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
     color: rgb(4, 4, 4);
     font-weight: 400;
     margin: 0px;
@@ -30,17 +32,29 @@ img {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding : 0 15px
+    padding: 0 15px;
 }
+
 
 a {
     text-decoration: none;
-    color: rgb(157, 37, 37);
+    color: black;
 }
 
 li {
     list-style-type: none;
 }
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 
 /*end global*/ 
 
@@ -52,22 +66,25 @@ label {
     position:absolute ; left :-999px
 }
 
-#logoheader {
-    display: flex;
-    justify-content: center;
-    height: $heightlogo;
-    object-fit: cover;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    border-bottom-style: outset;
+.logo {
+    padding: 2rem 0 0.5rem;
+    a {
+        @extend %flex-center;
+    }
+
+    img {
+        width: 45%;
+    }
 }
 
-#localisation {
-    background-color: #eaeaea;
+.form {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 50px;
+    background-color: #eaeaea;
+    box-shadow: 0 0.2em 0.5em grey inset;
+    padding: 1rem;
+    @extend %icon-style;
+    @extend %flex-center;
 
     p
     {
@@ -75,13 +92,64 @@ label {
     }
 }
 
-
-header > section {
-    background-color: #f6f6f6;
-    height: 250px;
+#search {
+    border: none;
+    font-size: 1.5rem;
+    background: #eaeaea;
 }
 
-#headercontent {
+header > nav {
+    background: #f2f2f2;
+}
+
+
+.presentation {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    nav {
+        width: 100%;
+        align-items: center;
+        padding: 0rem 2rem 2rem;
+        margin-top: 2rem; 
+        background: #f2f2f2;
+        
+        article {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}
+
+
+.choices {
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem;
+    width: 85%;
+
+    ul > li {
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 5rem;
+        margin: 0 0 3rem 0;
+        border-radius: 1rem;
+        box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #c4c4c4;
+        background-color: #f2f2f2;
+        gap: 1rem;
+        height: 6rem;
+
+        p {
+            @extend %nombre-style;
+        }
+
+    }
+}
+
+.exploration {
 
     display: flex;
     flex-direction: column;
@@ -99,21 +167,12 @@ header > section {
 }
 
 
-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-style: solid;
-    box-shadow: 0px 4px 4px 1px #c5c5c5;
-    font-weight: bold;
+.btn_explorer {
+    width: auto;
     font-size: $font-size-medium-up;
-
-    &:hover
-    {
-        transform: scale(1.03)
-    }
-
+    @extend %btn-style;
+    @extend %btn-explorer-style;
+    @extend %btn-transform;
 }
 
 #explorationbutton {
@@ -134,16 +193,62 @@ button {
     }
 
 
-#section1 {
+.articles {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 440px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: #f2f2f2;
+    padding: 1rem 0;
 }
 
-h2 {
-    font-size: $font-size-high;
-    font-weight: bold;
+.articles_title {
+    display: flex;
+    align-items: center;
+}
+.articles_content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    gap: 3rem;
+}
+
+.article_picture {
+    position: relative;
+    text-align: center;
+    color: white;
+
+    img {
+        height: 20rem;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 2rem 2rem 0 0;
+    }
+
+    .bannier {
+        display: flex;
+        font-weight: 700;
+        padding: 0 1rem;
+        background: #99E2D0;
+        border-radius: 0.2rem;
+        color: #2c9c81;
+        line-height: 2rem;
+        position: absolute;
+        top: 8px;
+        right: 16px;
+
+    }
+}
+
+.article_description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -2rem;
+    position: relative;
 }
 
 #section1 nav {
