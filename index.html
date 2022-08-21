@@ -17,18 +17,12 @@
     </head>
 
     <body>
-        <div class="loader">            
-            <div class="word">Oh</div>
-            <div class="word">my</div>
-            <div class="word">food</div>         
-            <div class="duree"></div>
-        </div>
         <div>
             <header>
                 <nav>
                     <div class="logo">
                         <a href="index.html">
-                            <img src="img/logo/ohmyfood.png" alt="logo">
+                            <img src="pages/img/logo/ohmyfood.png" alt="logo">
                         </a>  
                     </div>
                     
@@ -42,12 +36,12 @@
             </header>
 
             <main>
-                <div class="presentation" class="container2">
+                <div class="presentation">
                     <nav>
-                        <article class="container">                
+                        <article id="exploration" class="container">                
                             <h1>Réservez le menu qui vous convient</h1>
                             <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-                            <div class="btn_explorer">Explorer nos restaurants</div>
+                            <a href="#articles"><div class="btn_explorer">Explorer nos restaurants</div></a> 
                         </article>
                     </nav>
                     <div class="choices" class="container">
@@ -61,76 +55,81 @@
                         
                 </div>
                 
-                <section class="articles">
+                <section id="articles">
                     <div class="container">
                         <h2 class="articles_title" >Restaurants</h2>
                         <div class="articles_content">
                             <article>
                                 <a href="pages/gout.html">
                                 <div class="article_picture">                                    
-                                    <img src="img/restaurants/la_palette_du_gout.jpg" alt="image d'un plat gastronomique">
+                                    <img src="pages/img/restaurants/la_palette_du_gout.jpg" alt="image d'un plat gastronomique">
                                     <div class="bannier">Nouveau</div> 
                                 </div>                        
                                     <div class="article_description">
                                         <h2>La palette du goût</h2>
                                         <i class="far fa-heart"></i>
                                         <i class="far fa-heart couleur"></i>
+                                        <p class="descript">Ménilmontant</p>
                                     </div>    
-                                    <p class="descript">Ménilmontant</p>           
+                                              
                                 </a>    
                                 
                             </article>
                             <article >
-                                <a href="enchantee.html">
-                                    <div class="container1">                                    
-                                        <img src="image/restaurants/enchantee.jpg" alt="enchantee">
-                                        <div class="bannier">
-                                            Nouveau
-                                        </div>
+                                <a href="pages/enchantee.html">
+                                    <div class="article_picture">                                    
+                                        <img src="pages/img/restaurants/la_note_enchantee.jpg" alt="image d'un plat gastronomique">
+                                        <div class="bannier">Nouveau</div>
                                     </div>
                                     
-                                    <div class="description">
-                                        <h2 class="descript">La note enchantée</h2>
+                                    <div class="article_description">
+                                        <h2>La note enchantée</h2>
                                         <i class="far fa-heart"></i>  
-                                        <i class="far fa-heart couleur"></i>                              
+                                        <i class="far fa-heart couleur"></i>
+                                        <p class="descript">Charonne</p>                              
                                     </div>
-                                    <p class="descript">Charonne</p>
+                                    
                                 </a>
                                 
                             </article>
                             <article>
-                                <a href="francaise.html">
-                                    <img src="image/restaurants/francaise.jpg" alt="francaise">
-                                    <div class="description">
-                                        <h2 class="descript">A la française</h2>
+                                <a href="pages/française.html">
+                                    <div class="article_picture">
+                                        <img src="pages/img/restaurants/a_la_française.jpg" alt="image d'un plat gastronomique">
+                                    </div>
+
+                                    <div class="article_description">
+                                        <h2>A la française</h2>
                                         <i class="far fa-heart"></i>
                                         <i class="far fa-heart couleur"></i>
-                                    </div>
-                                    <p class="descript">Cité Rouge</p>
+                                        <p class="descript">Cité Rouge</p>
+                                    </div> 
                                 </a>
                                 
                             </article>
                             <article>
-                                <a href="sens.html">
-                                    <img src="image/restaurants/sens.jpg" alt="sens">
-                                    <div class="description">
-                                        <h2 class="descript">Le délice des sens</h2>
+                                <a href="pages/sens.html">
+                                    <div class="article_picture">
+                                        <img src="pages/img/restaurants/le_delice_des_sens.jpg" alt="image d'un plat gastronomique">
+                                    </div>
+                                    
+                                    <div class="article_description">
+                                        <h2>Le délice des sens</h2>
                                         <i class="far fa-heart"></i>
-                                        <i class="far fa-heart couleur"></i>                               
+                                        <i class="far fa-heart couleur"></i>
+                                        <p class="descript">Folie-Méricourt</p>                               
                                     </div> 
-                                    <p class="descript">Folie-Méricourt</p>
                                 </a>
-                                
                             </article>
                         </div> 
                     </div>
                 </section>
             </main>
 
-            <footer id="pad">
+            <footer>
                 <div class="container">
                     <nav>
-                        <h2 class="logo">ohmyfood</h2>
+                        <h2 class="footer_logo">ohmyfood</h2>
                         <ul>
                             <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
                             <li><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
@@ -139,9 +138,6 @@
                         </ul>
                     </nav>  
                 </div>
-            
             </footer> 
         </div>
-        
-
     </body>
