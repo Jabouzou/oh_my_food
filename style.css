@@ -189,7 +189,7 @@ legend {
  *    and Chrome.
  * 3. Improve appearance and consistency in all browsers.
  */
-button, #explorationbutton,
+button,
 input,
 select,
 textarea {
@@ -203,7 +203,7 @@ textarea {
  * Address Firefox 3+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-button, #explorationbutton,
+button,
 input {
   line-height: normal;
 }
@@ -214,7 +214,7 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-button, #explorationbutton,
+button,
 select {
   text-transform: none;
 }
@@ -228,7 +228,7 @@ select {
  * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-button, #explorationbutton,
+button,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
@@ -240,7 +240,7 @@ input[type=submit] {
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled], [disabled]#explorationbutton,
+button[disabled],
 html input[disabled] {
   cursor: default;
 }
@@ -283,7 +283,7 @@ input[type=search]::-webkit-search-decoration {
 /**
  * Remove inner padding and border in Firefox 3+.
  */
-button::-moz-focus-inner, #explorationbutton::-moz-focus-inner,
+button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -308,7 +308,6 @@ table {
 
 html,
 button,
-#explorationbutton,
 input,
 select,
 textarea {
@@ -346,22 +345,28 @@ textarea {
   padding: 0.2em 0;
 }
 
+@media screen and (min-width: 768px) {
+  .articles_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 @media screen and (min-width: 992px) {
   #explorationbutton {
     width: 100%;
   }
 }
-@media screen and (min-width: 1240px) {
-  #explorationbutton {
-    width: 100%;
+@media screen and (min-width: 768px) {
+  .articles_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 @media screen and (min-width: 992px) {
-  #explorationbutton {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 1240px) {
   #explorationbutton {
     width: 100%;
   }
@@ -438,14 +443,27 @@ img {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 25px;
+  width: 100%;
+}
+
+.container2 {
+  max-width: 1400px;
+  margin: 0px 50px;
   padding: 0 15px;
+  width: 100%;
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 li {
@@ -455,6 +473,7 @@ li {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  font-weight: bold;
 }
 
 h2 {
@@ -464,25 +483,117 @@ h2 {
 
 /*end global*/
 /*specifics*/
-/**************HEADER*********************/
+/* ANIMATION BEFORE HOMPAGE
+
+.loader {
+    @extend %flex-center;
+    padding: 0 11rem;
+    background: #f2f2f2;
+    position: fixed;
+    font-size: 5rem;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    animation: loader 4s forwards;
+    @keyframes loader {
+        0% {
+            opacity: 1;
+        }
+
+        99% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0; 
+        }
+    }
+}
+
+    .word {
+        opacity: 0;
+        font-family: "Shrikhand", sans-serif;
+
+        &:nth-of-type(1) {
+        animation: go 2s ease forwards;
+        color: #c1a5d3;
+        }
+
+        &:nth-of-type(2) {
+        animation: go 2s ease forwards;
+        animation-delay: 1s;
+        color: #b490c3;
+        }
+
+        &:nth-of-type(3) {
+        animation: go 2s ease forwards;
+        animation-delay: 2s;
+        color: #b080db;
+        }
+        @keyframes go 
+        {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+}
+
+.duree {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+
+.duree:after {
+    content: ".";
+    font-size: 0;
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid white;
+    border-color: white transparent white transparent;
+    animation: duree 1200ms 800ms linear forwards;
+}
+
+@keyframes duree {
+    from {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* END OF ANIMATION*/
+/**************HOMEPAGE****************/
+/*HEADER*/
 label {
   position: absolute;
   left: -999px;
 }
 
 .logo {
-  padding: 2rem 0 0.5rem;
+  padding: 2rem 0 2rem;
 }
 .logo img {
-  width: 45%;
+  width: 40%;
 }
 
 .form {
   display: flex;
   justify-content: center;
   background-color: #eaeaea;
-  box-shadow: 0 0.2em 0.5em grey inset;
+  box-shadow: 0 0.2em 0.5em #d2cfcf inset;
   padding: 1rem;
+  height: 50px;
 }
 .form p {
   margin-left: 15px;
@@ -492,8 +603,18 @@ label {
   border: none;
   font-size: 1.5rem;
   background: #eaeaea;
+  font-weight: bold;
+  text-align: center;
+  width: 35%;
 }
 
+input::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+/*END HEADER*/
+/*MAIN*/
 header > nav {
   background: #f2f2f2;
 }
@@ -506,14 +627,23 @@ header > nav {
 .presentation nav {
   width: 100%;
   align-items: center;
-  padding: 0rem 2rem 2rem;
-  margin-top: 2rem;
+  padding: 20px 0 40px;
   background: #f2f2f2;
 }
 .presentation nav article {
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+}
+
+#exploration p {
+  padding-bottom: 15px;
+}
+
+.btn_explorer {
+  width: auto;
+  font-size: 21px;
 }
 
 .choices {
@@ -534,45 +664,11 @@ header > nav {
   gap: 1rem;
   height: 6rem;
 }
-.exploration {
+/*articles de retaurant*/
+#articles {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
-  margin: 0px 30px;
-  height: 100%;
-}
-.exploration h1 {
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.btn_explorer {
-  width: auto;
-  font-size: 21px;
-}
-
-#explorationbutton {
-  background-color: #9356DC;
-  border-color: #9356DC;
-  border-radius: 40px;
-  height: 50px;
-  width: 80%;
-}
-#explorationbutton a {
-  color: white;
-  font-weight: 700;
-  font-size: 21px;
-}
-
-.articles {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
   background-color: #f2f2f2;
   padding: 1rem 0;
 }
@@ -586,8 +682,14 @@ header > nav {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 2rem;
-  gap: 3rem;
+}
+.articles_content article {
+  width: 100%;
+  height: 265px;
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
 .article_picture {
@@ -618,71 +720,62 @@ header > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: -2rem;
   position: relative;
 }
 
-#section1 nav {
-  height: 300px;
+.fa-heart {
+  font-size: x-large;
+  margin: 0 1rem 0 0;
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 400ms;
 }
-#section1 nav ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
-}
-#section1 nav li {
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 4px 4px 1px #c5c5c5;
-  border-radius: 30px;
-  height: 75px;
-  width: 90%;
-  background-color: #f6f6f6;
-}
-
-#section1 p {
-  border-radius: 20px;
-  background-color: #9356DC;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.fa-heart:hover {
+  transform: scale(1.15);
+  opacity: 100%;
+  background-image: linear-gradient(0deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* DOUCEMENT AVEC LE NESTING CI-DESSUS pas plus loin de 3 imbrications*/
-/**********MAIN***************/
-#section2 {
-  background-color: #f6f6f6;
-}
-#section2 #restaurantchoice {
-  margin: 0px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 1226px;
-}
-#section2 #restaurantchoice #restaurantpictures {
-  margin: 30px 0px;
-}
-
-.restaurant {
-  background-color: white;
-}
-
-.restaurant img {
-  width: 100%;
-  border-radius: 20px;
-  object-fit: cover;
-  height: 230px;
-}
-
+/* END MAIN*/
 /*FOOTER*/
 footer img {
   height: 20px;
 }
+
+footer {
+  padding: 2rem 0 2rem;
+  background-color: #353535;
+  color: white;
+}
+footer ul {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  margin: auto;
+}
+footer li {
+  margin-bottom: 0.5rem;
+}
+footer li a {
+  color: white;
+}
+
+.footer_logo {
+  font-family: "Shrikhand", cursive;
+  font-weight: 500;
+}
+
+.fa-utensils,
+.fa-hands-helping {
+  margin-right: 1.5rem;
+}
+
+/**************OTHER PAGES****************/
 
 /*# sourceMappingURL=style.css.map */
