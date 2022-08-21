@@ -1,4 +1,4 @@
-//Style pour centrer un élément
+// flex pour centrer un élément
 
 %flex-center {
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-//Style des icones fonts
+//icon style
 
 %icon-style {
     padding: 1rem;
@@ -14,35 +14,39 @@
 } 
 
 
-// style des boutons
+// button style
 
-    //style générique 
-    %btn-style {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-style: solid;
-        box-shadow: 0px 4px 4px 1px #c5c5c5;
+%btn-style {
+        display: inline-block;
+        
+        font-family: sans-serif;
         font-weight: bold;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+
+        background: linear-gradient(170deg, #ff79da, #9356dc);
+        box-shadow: 0px 0px 2rem 0px rgb(0 0 0 / 30%);
+           
+        border-radius: 2rem;
+        border-width: 0px;
+        line-height: 1;
+
         padding: 1.5rem;
+        margin: 0;
+           
+        cursor: pointer;
+
+        -webkit-appearance: none;
     }
 
-    %btn-transform {
+%btn-transform {
         transform: scale(1);
         transition-property: transform;
         transition-duration: 400ms;
         }
 
-    //styles particuliers 
-
-    %btn-explorer-style {
-        background: linear-gradient(170deg, #ff79da, #9356dc);
-        color: white;
-        border-radius: 2rem;
-        box-shadow: 0px 0px 2rem 0px rgb(0 0 0 / 30%);
-    }
-    
+// number style
 
 %nombre-style {
     background-color: #9356dc;
@@ -56,5 +60,5 @@
 le code s'écrit dans chaque élément du css
 alors que avec les pl, ça se met à la suite:
 h1, h2 { etc.
-    UTILISER LES MIXINS SEULEMENT QUAND ON A DES PARAMETRES
-    SINON ON UTILISE DES PLACESHOLDERS*/
+UTILISER LES MIXINS SEULEMENT QUAND ON A DES PARAMETRES
+SINON ON UTILISE DES PLACESHOLDERS*/
