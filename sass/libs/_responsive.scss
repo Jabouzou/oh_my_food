@@ -1,14 +1,17 @@
-@media screen and (min-width: 992px)
-{
-   
-   #explorationbutton
-   {
-       width: 100%;
-   }
+// finir l'intégration mobile à 100% (full) puis tablette et desktop
 
+
+@media screen and (min-width: 768px)
+{
+    .articles_content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
-@media screen and (min-width: 1240px)
+@media screen and (min-width: 992px)
 {
    
    #explorationbutton
