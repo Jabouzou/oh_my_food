@@ -352,10 +352,8 @@ textarea {
     flex-wrap: wrap;
     justify-content: center;
   }
-}
-@media screen and (min-width: 992px) {
-  #explorationbutton {
-    width: 100%;
+  button {
+    font-size: 2rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -365,10 +363,8 @@ textarea {
     flex-wrap: wrap;
     justify-content: center;
   }
-}
-@media screen and (min-width: 992px) {
-  #explorationbutton {
-    width: 100%;
+  button {
+    font-size: 2rem;
   }
 }
 button, .form, .logo a {
@@ -385,7 +381,6 @@ button, .form, .logo a {
 button {
   display: inline-block;
   font-family: sans-serif;
-  font-weight: bold;
   color: white;
   text-decoration: none;
   text-align: center;
@@ -406,11 +401,17 @@ button {
   transition-duration: 400ms;
 }
 
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(170deg, rgba(255, 121, 218, 0.8117647059), rgba(147, 86, 220, 0.8117647059));
+  box-shadow: 0px 0px 5rem 0px rgba(0, 0, 0, 0.3);
+}
+
 .choices ul > li p {
   background-color: #9356dc;
   color: white;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 2rem;
+  padding: 7px 10px;
+  border-radius: 50%;
   margin-left: -7rem;
 }
 
@@ -445,13 +446,13 @@ img {
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 25px;
+  padding: 0 30px;
   width: 100%;
 }
 
 .container2 {
   max-width: 1400px;
-  margin: 0px 50px;
+  margin: 0 auto;
   padding: 0 15px;
   width: 100%;
 }
@@ -471,14 +472,15 @@ li {
 }
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+  font-size: 25px;
+  margin: 25px 8px;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 22px;
   font-weight: bold;
+  padding: 30px 0px;
 }
 
 .btn {
@@ -609,7 +611,7 @@ label {
   background: #eaeaea;
   font-weight: bold;
   text-align: center;
-  width: 35%;
+  width: 40%;
 }
 
 input::placeholder {
@@ -620,7 +622,7 @@ input::placeholder {
 /*END HEADER*/
 /*MAIN*/
 header > nav {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .presentation {
@@ -631,7 +633,6 @@ header > nav {
 .presentation nav {
   width: 100%;
   align-items: center;
-  padding: 20px 0 40px;
   background: #f2f2f2;
 }
 .presentation nav article {
@@ -643,19 +644,22 @@ header > nav {
 
 #exploration p {
   padding-bottom: 15px;
+  font-size: 15px;
+  color: rgba(56, 55, 55, 0.6784313725);
 }
 
 button {
   width: auto;
-  font-size: 21px;
+  font-size: 1.4rem;
+  margin: 22px 0 40px;
 }
-
 .choices {
   align-items: center;
   flex-direction: column;
-  gap: 0;
-  padding: 1rem;
-  width: 85%;
+  width: 80%;
+}
+.choices h2 {
+  margin-left: -1.5rem;
 }
 .choices ul > li {
   display: flex;
@@ -663,17 +667,35 @@ button {
   padding: 0 0 0 5rem;
   margin: 0 0 3rem 0;
   border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #c4c4c4;
+  box-shadow: 2px 4px 7px 2.3px rgba(196, 196, 196, 0.4705882353);
   background-color: #f2f2f2;
   gap: 1rem;
   height: 6rem;
+  transform: scale(1);
+  cursor: pointer;
 }
+.choices ul > li:hover {
+  transform: scale(1.05);
+  transition-property: transform;
+  transition-duration: 400ms;
+  background: #F2EAFB;
+}
+.choices ul > li a {
+  font-weight: bold;
+}
+#choice_pic1,
+#choice_pic2,
+#choice_pic3 {
+  padding: 10px;
+  color: grey;
+}
+
 /*articles de retaurant*/
 #articles {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: rgba(242, 242, 242, 0.5490196078);
   padding: 1rem 0;
 }
 
@@ -686,14 +708,18 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 15px;
 }
 .articles_content article {
   width: 100%;
-  height: 265px;
   background-color: white;
   border-radius: 2rem;
   box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.3);
   position: relative;
+}
+.articles_content article a {
+  display: flex;
+  flex-direction: column;
 }
 
 .article_picture {
@@ -722,16 +748,20 @@ button {
 
 .article_description {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   position: relative;
+  padding: 12px 0px 12px 12px;
+}
+.article_description h2 {
+  font-size: 15px;
+  padding: 6px 0;
 }
 
 .fa-heart {
-  margin: 0 1rem 0 0;
+  margin: 0 10px;
   font-size: x-large;
   position: absolute;
-  top: 3rem;
+  top: 2rem;
   right: 1rem;
   transform: scale(1);
   transition-property: transform;
@@ -765,6 +795,9 @@ footer li {
 footer li a {
   color: white;
 }
+footer li a:hover {
+  text-decoration: underline;
+}
 
 .footer_logo {
   font-family: "Shrikhand", cursive;
@@ -781,16 +814,20 @@ footer li a {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 60px;
 }
 
+.logopages {
+  text-align: center;
+}
 .logopages img {
   width: 50%;
 }
 
 .fa-arrow-left {
   font-size: 2rem;
-  position: absolute;
-  left: 1rem;
+  position: relative;
+  left: -0.7em;
 }
 
 img {
@@ -875,19 +912,20 @@ section h3 {
 .section_text .text_title {
   font-size: 16px;
   margin-bottom: 5px;
-  margin: 1rem 0;
+  margin: 7px 0px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   font-weight: bold;
 }
 .section_text .text_subtitle {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
   margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  padding-bottom: 6px;
 }
 
 .section_animation {
@@ -905,6 +943,11 @@ section h3 {
 .section_animation .animation_pic {
   background: #99E2D0;
   padding: 22px;
+}
+
+.btn button {
+  width: 55%;
+  margin: 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
