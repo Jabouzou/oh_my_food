@@ -32,13 +32,13 @@ img {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 30px;
     width: 100%;
 }
 
 .container2 {
     max-width: 1400px;
-    margin: 0px 50px;
+    margin: 0 auto;
     padding: 0 15px;
     width: 100%;
 }
@@ -59,14 +59,15 @@ li {
 }
 
 h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
+    font-size: 25px;
+    margin: 25px 8px;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 22px;
     font-weight: bold;
+    padding: 30px 0px;
 }
 
 .btn {
@@ -212,7 +213,7 @@ label {
     background: #eaeaea;
     font-weight: bold;
     text-align: center;
-    width: 35%;
+    width: 40%;
 }
 
 input::placeholder {
@@ -225,7 +226,7 @@ input::placeholder {
 /*MAIN*/
 
 header > nav {
-    background: #f2f2f2;
+    background: #fff;
 }
 
 .presentation {
@@ -236,7 +237,6 @@ header > nav {
     nav {
         width: 100%;
         align-items: center;
-        padding: 20px 0 40px;
         background: #f2f2f2;
         
         article {
@@ -250,23 +250,34 @@ header > nav {
 
 #exploration p {
     padding-bottom: 15px;
+    font-size: 15px;
+    color: #383737ad;
 }
 
 
 button {
     width: auto;
-    font-size: $font-size-medium-up;
+    font-size: 1.4rem;
+    margin: 22px 0 40px;
     @extend %btn-style;
-    @extend %btn-transform;
+    @extend %btn-transform-before;
     @extend %flex-center;
+
+    &:hover {
+        @extend %btn-transform-after;
+    }
 }
+
+
 
 .choices {
     align-items: center;
     flex-direction: column;
-    gap: 0;
-    padding: 1rem;
-    width: 85%;
+    width: 80%;
+
+    h2 {
+        margin-left: -1.5rem;
+    }
 
     ul > li {
         display: flex;
@@ -274,10 +285,23 @@ button {
         padding: 0 0 0 5rem;
         margin: 0 0 3rem 0;
         border-radius: 1rem;
-        box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #c4c4c4;
+        box-shadow: 2px 4px 7px 2.3px #c4c4c478;
         background-color: #f2f2f2;
         gap: 1rem;
         height: 6rem;
+        transform: scale(1);
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.05);
+            transition-property: transform;
+            transition-duration: 400ms;
+            background: #F2EAFB;
+        }
+
+        a {
+            font-weight: bold;
+        }
 
         p {
             @extend %nombre-style;
@@ -285,14 +309,23 @@ button {
 
     }
 }
-    
+
+
+#choice_pic1,
+#choice_pic2,
+#choice_pic3 {
+    padding: 10px;
+    color: grey;
+}
+
+
 /*articles de retaurant*/
 
 #articles {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f2f2f2;
+    background-color: #f2f2f28c;
     padding: 1rem 0;
 }
 
@@ -304,14 +337,19 @@ button {
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 15px;
 
     article {
         width: 100%;
-        height: 265px;
         background-color: white;
         border-radius: 2rem;
         box-shadow: 0 0 3rem 0 rgb(0 0 0 / 30%);
         position: relative;
+
+        a {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 
@@ -344,15 +382,21 @@ button {
 
 .article_description {
     display: flex;
-    justify-content: space-between;
-    align-items: center;    position: relative;
+    flex-direction: column;  
+    position: relative;
+    padding: 12px 0px 12px 12px;
+
+    h2 {
+        font-size: 15px;
+        padding: 6px 0;
+    }
 }
 
 .fa-heart {
-    margin: 0 1rem 0 0;
+    margin: 0 10px;
     font-size: x-large;
     position: absolute;
-    top: 3rem;
+    top: 2rem;
     right: 1rem;
     transform: scale(1);
     transition-property: transform;
@@ -387,10 +431,13 @@ footer {
 
     li {
     margin-bottom: 0.5rem;
-
-    a {
-        color: white;  
-    }
+        a {
+            color: white;
+            &:hover {
+               text-decoration: underline; 
+            }
+    
+        }
     }
 }
 
@@ -411,15 +458,24 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 60px;
 }
 
-.logopages img {
-    width: 50%;
+.logopages {
+
+    text-align: center;
+
+    img {
+        width: 50%;
+    }
+    
+    
 }
+
 .fa-arrow-left {
     font-size: 2rem;
-    position: absolute;
-    left: 1rem;
+    position: relative;
+    left: -0.7em;
 }
 
 
@@ -506,7 +562,7 @@ section h3 {
     .text_title {
         font-size: 16px;
         margin-bottom: 5px;
-        margin: 1rem 0;
+        margin: 7px 0px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
@@ -514,12 +570,13 @@ section h3 {
     }
 
     .text_subtitle {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 300;
         margin: 0;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+        padding-bottom: 6px;
     }
 }
 
@@ -540,5 +597,10 @@ section h3 {
         background: #99E2D0;
         padding: 22px;
     }
+}
+
+.btn button {
+    width: 55%;
+    margin: 0px;
 }
 

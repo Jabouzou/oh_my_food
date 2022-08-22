@@ -1,7 +1,6 @@
 // finir l'intégration mobile à 100% (full) puis tablette et desktop
 
-
-@media screen and (min-width: 768px)
+@media screen and (min-width:768px)
 {
     .articles_content {
         display: flex;
@@ -9,14 +8,10 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    button {
+        font-size: 2rem;
+    }
 }
 
-@media screen and (min-width: 992px)
-{
-   
-   #explorationbutton
-   {
-       width: 100%;
-   }
 
-}

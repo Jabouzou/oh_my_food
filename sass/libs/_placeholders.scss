@@ -20,7 +20,6 @@
         display: inline-block;
         
         font-family: sans-serif;
-        font-weight: bold;
         color: white;
         text-decoration: none;
         text-align: center;
@@ -40,19 +39,25 @@
         -webkit-appearance: none;
     }
 
-%btn-transform {
+%btn-transform-before {
         transform: scale(1);
         transition-property: transform;
         transition-duration: 400ms;
         }
+
+%btn-transform-after {
+    transform: scale(1.05);
+    background: linear-gradient(170deg, rgba(255, 121, 218, 0.8117647059), rgba(147, 86, 220, 0.8117647059));
+    box-shadow: 0px 0px 5rem 0px rgb(0 0 0 / 30%);
+}
 
 // number style
 
 %nombre-style {
     background-color: #9356dc;
     color: white;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    border-radius: 2rem;
+    padding: 7px 10px;
+    border-radius: 50%;
     margin-left: -7rem;
 }
 
