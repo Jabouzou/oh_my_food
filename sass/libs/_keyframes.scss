@@ -1,0 +1,43 @@
+@keyframes appear_scale {
+
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes disappear {
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes jumping {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-190px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes appear {
+    from {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes quartercircle {
+    from {
+        transform: rotate(-170deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}

@@ -1,8 +1,7 @@
 @import "libs/_variables.scss";
-@import "libs/_mixins.scss";
+@import "libs/placeholders.scss";
+@import "libs/keyframes.scss";
 @import "libs/_reset.scss";
-@import "libs/_responsive.scss";
-@import "libs/placeholders";
 
 
 /**global**/
@@ -93,12 +92,6 @@ h2 {
     
 }
 
-@keyframes disappear {
-    to {
-        transform: scale(0);
-    }
-}
-
 .loader_ul {
 	margin: 0;
 	padding: 0;
@@ -113,12 +106,6 @@ h2 {
         margin: 0 10px;
         border-radius: 50%;
         animation: jumping 2s linear infinite;
-        
-        @keyframes jumping {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-190px); }
-            100% { transform: translateY(0); }
-        }
 
         &:nth-child(1) {
             animation-delay: 0.45s;
@@ -183,13 +170,12 @@ label {
 
 .logo {
     padding: 2rem 0 2rem;
+    
     a {
         @extend %flex-center;
     }
 
-    img {
-        width: 40%;
-    }
+    img {width: 40%;}
 }
 
 @media only screen and (min-width:768px) {
@@ -206,7 +192,7 @@ label {
     box-shadow: 0 0.2em 0.5em #d2cfcf inset;
     padding: 1rem;
     height: 50px;
-    @extend %icon-style;
+    @extend%icon-style;
     @extend %flex-center;
 
     p
@@ -252,13 +238,6 @@ header > nav {
         width: 100%;
         align-items: center;
         background: #f2f2f2;
-        
-        article {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-        }
     }
 }
 
@@ -274,12 +253,17 @@ header > nav {
     }
  }
  
- 
-
-#exploration p {
-    padding-bottom: 15px;
-    font-size: 15px;
-    color: #383737ad;
+#exploration {
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    p {
+        padding-bottom: 15px;
+        font-size: 15px;
+        color: #383737ad;
+    }
 }
 
 
@@ -299,8 +283,6 @@ header > nav {
         width: 50%;
     }
 }
-
-
 
 
 
@@ -372,6 +354,7 @@ header > nav {
     align-items: center;
     background-color: #f2f2f28c;
     padding: 1rem 0;
+    width: 100% !important;
 }
 
 .articles_title {
@@ -514,6 +497,7 @@ footer {
 .footer_logo {
     font-family: "Shrikhand", cursive;
     font-weight: 500;
+    padding: 10px;
 }
 
 .fa-utensils,
@@ -593,17 +577,6 @@ section h3 {
     animation: appear 1.5s;
 }
 
-@keyframes appear {
-    from {
-        transform: translateY(-10%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
 .menus.sections h3 {
     content: "";
     width: 40px;
@@ -625,14 +598,49 @@ section h3 {
     justify-content: space-between;
     align-items: center;
     width: 95%;
+    height: 70px;
     margin: auto;
     margin-bottom: 15px;
-    padding: 0px 10px;
+    padding: 0px 0px 0px 10px;
     overflow: hidden;
-    animation:  1400ms ease-in-out both;
-    animation-delay: 500ms;
+    animation: appear_scale 1s;
+    animation-fill-mode: both;
+    filter: drop-shadow(2px 1px 1px #d6d6d6);
+    
+    @for $i from 3 to 1 {
+    &:nth-child(#{$i}) {
+            animation-delay: 100ms/$i;
+        }              
+    }
+
+    &:hover {
+        .section_animation {
+            margin-right: 0px;
+
+            .animation_pic i {
+                animation: quartercircle 0.5s ease-in-out;
+            }
+        }
+    }
 }
 
+@media screen and (min-width: 1020px) {
+    .section_content {
+        width: 90%;
+        height: 70px;
+    }
+}
+
+.section_title::after {
+        content: "";
+        width: 40px;
+        height: 4px;
+        background-color: #99E2D0;
+        position: absolute;
+        bottom: -10px;
+        left: 1px;
+}
+    
 .section_text {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -665,30 +673,33 @@ section h3 {
 .section_animation {
     display: flex;
     align-items: flex-end;
-    width: 29px;
-    transition-duration: 750ms;
+    margin-right: -8rem;
+    overflow: hidden;
+    transition: all 500ms;
 
     .animation_price {
         font-weight: bold;
-        margin: 0 20px 12px 0;
+        margin: 0 20px 25px 0;
         text-align: center;
         font-size: 14px;
     }
 }
 
+
 .animation_pic {
     background: #99E2D0;
-    padding: 22px;
+    padding: 20px;
+    border-radius: 0 1rem 1rem 0px;
+}
 
-    i {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        color: #ffffff;
-        transition-duration: 680ms;
-    }
+
+.fas.fa-check-circle {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #ffffff;
 }
 
 .btn button {
@@ -699,7 +710,7 @@ section h3 {
 @media only screen and (min-width:768px) {
     
     section {
-        width: 100%;
+        width: 340px;
     }
 
     .sections {
@@ -731,4 +742,20 @@ section h3 {
         left: -19.7em;
     }
 }
+
+@media only screen and (min-width:1020px) {
+    .sections {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    #exploration a {
+        width: 40%;
+    }
+    .exploration_button {
+        width: 25%;
+    
+    }
+}
+
 
