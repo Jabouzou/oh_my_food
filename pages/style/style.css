@@ -1,4 +1,93 @@
 @charset "UTF-8";
+.form, .logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  padding: 1rem;
+  font-size: 20px;
+}
+
+.exploration_button {
+  display: inline-block;
+  font-family: sans-serif;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  background: linear-gradient(170deg, #ff79da, #9356dc);
+  box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.3);
+  border-radius: 2rem;
+  border-width: 0px;
+  line-height: 1;
+  padding: 1.5rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.exploration_button:hover {
+  transition-property: transform;
+  transition-duration: 200ms;
+  transform: scale(1.1);
+}
+
+.choices ul > li p {
+  background-color: #9356dc;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 50%;
+  margin-left: -7rem;
+}
+
+/*@extend _ mieux vaut utiliser les placeholder car dans les mixin,
+le code s'écrit dans chaque élément du css
+alors que avec les pl, ça se met à la suite:
+h1, h2 { etc.
+UTILISER LES MIXINS SEULEMENT QUAND ON A DES PARAMETRES
+SINON ON UTILISE DES PLACESHOLDERS*/
+@keyframes appear_scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes jumping {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-190px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes appear {
+  from {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes quartercircle {
+  from {
+    transform: rotate(-170deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 /* ***********************************************************************************************
 		Reset CSS
 *********************************************************************************************** */
@@ -345,53 +434,6 @@ textarea {
   padding: 0.2em 0;
 }
 
-.form, .logo a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form {
-  padding: 1rem;
-  font-size: 20px;
-}
-
-.exploration_button {
-  display: inline-block;
-  font-family: sans-serif;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  background: linear-gradient(170deg, #ff79da, #9356dc);
-  box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.3);
-  border-radius: 2rem;
-  border-width: 0px;
-  line-height: 1;
-  padding: 1.5rem;
-  margin: 0;
-  cursor: pointer;
-}
-
-.exploration_button:hover {
-  transition-property: transform;
-  transition-duration: 200ms;
-  transform: scale(1.1);
-}
-
-.choices ul > li p {
-  background-color: #9356dc;
-  color: white;
-  padding: 7px 10px;
-  border-radius: 50%;
-  margin-left: -7rem;
-}
-
-/*@extend _ mieux vaut utiliser les placeholder car dans les mixin,
-le code s'écrit dans chaque élément du css
-alors que avec les pl, ça se met à la suite:
-h1, h2 { etc.
-UTILISER LES MIXINS SEULEMENT QUAND ON A DES PARAMETRES
-SINON ON UTILISE DES PLACESHOLDERS*/
 /**global**/
 * {
   box-sizing: border-box;
@@ -475,11 +517,6 @@ h2 {
   transform-origin: top;
 }
 
-@keyframes disappear {
-  to {
-    transform: scale(0);
-  }
-}
 .loader_ul {
   margin: 0;
   padding: 0;
@@ -495,17 +532,6 @@ h2 {
   border-radius: 50%;
   animation: jumping 2s linear infinite;
 }
-@keyframes jumping {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-190px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 .loader_ul li:nth-child(1) {
   animation-delay: 0.45s;
   background-color: #9356DC;
@@ -519,7 +545,7 @@ h2 {
   background-color: #fd8cff;
 }
 .loader_ul li:nth-child(4) {
-  animation-delay: 0;
+  animation-delay: 0s;
   background-color: #FF79DA;
 }
 .loader_ul li:nth-child(5) {
@@ -613,12 +639,6 @@ header > nav {
   align-items: center;
   background: #f2f2f2;
 }
-.presentation nav article {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
 
 @media only screen and (min-width: 768px) {
   .presentation {
@@ -629,6 +649,12 @@ header > nav {
   .presentation nav {
     border-radius: 50px;
   }
+}
+#exploration {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 #exploration p {
   padding-bottom: 15px;
@@ -701,6 +727,7 @@ header > nav {
   align-items: center;
   background-color: rgba(242, 242, 242, 0.5490196078);
   padding: 1rem 0;
+  width: 100% !important;
 }
 
 .articles_title {
@@ -824,6 +851,7 @@ footer li a:hover {
 .footer_logo {
   font-family: "Shrikhand", cursive;
   font-weight: 500;
+  padding: 10px;
 }
 
 .fa-utensils,
@@ -895,16 +923,6 @@ section h3 {
   animation: appear 1.5s;
 }
 
-@keyframes appear {
-  from {
-    transform: translateY(-10%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 .menus.sections h3 {
   content: "";
   width: 40px;
@@ -926,12 +944,42 @@ section h3 {
   justify-content: space-between;
   align-items: center;
   width: 95%;
+  height: 70px;
   margin: auto;
   margin-bottom: 15px;
-  padding: 0px 10px;
+  padding: 0px 0px 0px 10px;
   overflow: hidden;
-  animation: 1400ms ease-in-out both;
-  animation-delay: 500ms;
+  animation: appear_scale 1s;
+  animation-fill-mode: both;
+  filter: drop-shadow(2px 1px 1px #d6d6d6);
+}
+.section_content:nth-child(3) {
+  animation-delay: 33.3333333333ms;
+}
+.section_content:nth-child(2) {
+  animation-delay: 50ms;
+}
+.section_content:hover .section_animation {
+  margin-right: 0px;
+}
+.section_content:hover .section_animation .animation_pic i {
+  animation: quartercircle 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 1020px) {
+  .section_content {
+    width: 90%;
+    height: 70px;
+  }
+}
+.section_title::after {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background-color: #99E2D0;
+  position: absolute;
+  bottom: -10px;
+  left: 1px;
 }
 
 .section_text {
@@ -964,28 +1012,30 @@ section h3 {
 .section_animation {
   display: flex;
   align-items: flex-end;
-  width: 29px;
-  transition-duration: 750ms;
+  margin-right: -8rem;
+  overflow: hidden;
+  transition: all 500ms;
 }
 .section_animation .animation_price {
   font-weight: bold;
-  margin: 0 20px 12px 0;
+  margin: 0 20px 25px 0;
   text-align: center;
   font-size: 14px;
 }
 
 .animation_pic {
   background: #99E2D0;
-  padding: 22px;
+  padding: 20px;
+  border-radius: 0 1rem 1rem 0px;
 }
-.animation_pic i {
+
+.fas.fa-check-circle {
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 30px;
   color: #ffffff;
-  transition-duration: 680ms;
 }
 
 .btn button {
@@ -995,7 +1045,7 @@ section h3 {
 
 @media only screen and (min-width: 768px) {
   section {
-    width: 100%;
+    width: 340px;
   }
   .sections {
     display: flex;
@@ -1020,6 +1070,18 @@ section h3 {
   }
   .fa-arrow-left {
     left: -19.7em;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  .sections {
+    justify-content: center;
+    gap: 20px;
+  }
+  #exploration a {
+    width: 40%;
+  }
+  .exploration_button {
+    width: 25%;
   }
 }
 
