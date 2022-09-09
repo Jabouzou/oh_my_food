@@ -280,7 +280,7 @@ header > nav {
 
 @media only screen and (min-width:768px) {
     .exploration_button {
-        width: 50%;
+        width: 42%;
     }
 }
 
@@ -559,7 +559,13 @@ img {
 }
 
 section {
-    margin-bottom: 40px;
+    margin: 0 0 4rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+    section {
+        margin: 2rem 2rem 0 0;
+    }
 }
 
 section h3 {
@@ -624,7 +630,7 @@ section h3 {
     }
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1280px) {
     .section_content {
         width: 90%;
         height: 70px;
@@ -707,15 +713,24 @@ section h3 {
     margin: 0px;
 }
 
-@media only screen and (min-width:768px) {
-    
-    section {
-        width: 340px;
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+    .sections {
+        flex-wrap: wrap;
     }
 
-    .sections {
+    .section_content {
+        width: 330px;
+    }
+}
+@media only screen and (min-width:768px) {
+
+    #exploration a {
+        width: 75%
+    }
+    
+        .sections {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         margin-top: 25px;
     }
@@ -739,18 +754,27 @@ section h3 {
     }
 
     .fa-arrow-left {
-        left: -19.7em;
+        left: -7.7em;
     }
 }
 
-@media only screen and (min-width:1020px) {
+@media only screen and (min-width:1280px) {
+    
+    #exploration a {
+        width: 40%;
+    }
+
+    .fa-arrow-left {
+        left: -19.7em;
+    }
+
+    section {
+        width: 340px;
+    }
+
     .sections {
         justify-content: center;
         gap: 20px;
-    }
-
-    #exploration a {
-        width: 40%;
     }
     .exploration_button {
         width: 25%;
