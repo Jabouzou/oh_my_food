@@ -942,8 +942,32 @@ section h3 {
   animation: slidedown 1.5s;
 }
 
-.sections {
-  animation: appear 1.5s;
+#section1 {
+  animation: appear_scale 1s;
+}
+
+#section2 {
+  animation: appear_scale 1.5s;
+}
+
+#section3 {
+  animation: appear_scale 2s;
+}
+
+.un {
+  animation: appear_scale 1s;
+}
+
+.deux {
+  animation: appear_scale 1.25s;
+}
+
+.trois {
+  animation: appear_scale 1.5s;
+}
+
+.quatre {
+  animation: appear_scale 1.75s;
 }
 
 .section_animation {
@@ -976,7 +1000,6 @@ section h3 {
   margin-bottom: 15px;
   padding: 0px 0px 0px 10px;
   overflow: hidden;
-  animation: appear_scale 1s;
   animation-fill-mode: both;
   filter: drop-shadow(2px 1px 1px #d6d6d6);
 }
