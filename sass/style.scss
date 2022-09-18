@@ -30,7 +30,6 @@ img {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 30px;
     width: 100%;
 }
 
@@ -58,8 +57,9 @@ li {
 
 h1 {
     font-size: 25px;
-    margin: 25px 8px;
+    margin: 25px 0px;
     font-weight: bold;
+    width: 80%;
 }
 
 h2 {
@@ -216,8 +216,13 @@ label {
     }
 }
 
+.fa-solid.fa-location-dot {
+    color: rgb(66, 66, 66);
+    font-size: 16px;
+}
+
 input::placeholder {
-    color: black;
+    color: rgb(66, 66, 66);
     opacity: 1;
 }
 
@@ -261,14 +266,15 @@ header > nav {
     text-align: center;
     p {
         padding-bottom: 15px;
-        font-size: 15px;
+        font-size: 18px;
         color: #383737ad;
+        margin: 0px 25px;
     }
 }
 
 
 .exploration_button {
-    width: 80%;
+    width: 43%;
     font-size: 1.4rem;
     margin: 22px 0 40px;
     @extend %btn-style;
@@ -280,7 +286,7 @@ header > nav {
 
 @media only screen and (min-width:768px) {
     .exploration_button {
-        width: 42%;
+        width: 20%;
     }
 }
 
@@ -296,10 +302,9 @@ header > nav {
 .choices {
     display: flex;
     flex-direction: column;
-    width: 80%;
 
-    h2 {
-        margin-left: -1.5rem;
+    ul {
+        margin-left: 16px;
     }
 
     ul > li {
@@ -335,6 +340,10 @@ header > nav {
 @media only screen and (min-width:768px) {
     .choices h2 {
         text-align: center;
+    }
+
+    .choices ul > li p {
+        margin-left: -6rem;
     }
 }    
 
@@ -471,10 +480,10 @@ header > nav {
 /*FOOTER*/
 
 footer {
-    padding: 2rem 0 2rem;
+    padding: 2rem;
     background-color: #353535;
-    color: white;    
-
+    color: white;
+    
     ul {
         display: flex;
         align-items: baseline;
@@ -494,19 +503,28 @@ footer {
     }
 }
 
+.fas.fa-hands-helping {
+    font-size: 10px;
+}
+
 .footer_logo {
     font-family: "Shrikhand", cursive;
     font-weight: 500;
-    padding: 10px;
+    padding: 10px 0px 20px 0px;
 }
 
 .fa-utensils,
 .fa-hands-helping {
-    margin-right: 1.5rem;
+    margin-right: 10px;
 }
 
 
 /**************OTHER PAGES****************/
+
+
+.pages_img {
+    height: 31rem;
+}
 
 .headerpages {
     display: flex;
@@ -529,7 +547,7 @@ footer {
 .fa-arrow-left {
     font-size: 2rem;
     position: relative;
-    left: -0.7em;
+    left: 1.3em;
 }
 
 
@@ -549,8 +567,8 @@ img {
 
     h2 {
         display: flex;
-        justify-content: center;
         align-items: center;
+        margin-left: 10px;
         position: relative;
         font-family: "shrikhand", sans-serif;
         font-weight: inherit;
@@ -583,6 +601,10 @@ section h3 {
     animation: appear 1.5s;
 }
 
+.section_animation {
+    margin-right: 0px;
+}
+
 .menus.sections h3 {
     content: "";
     width: 40px;
@@ -612,13 +634,7 @@ section h3 {
     animation: appear_scale 1s;
     animation-fill-mode: both;
     filter: drop-shadow(2px 1px 1px #d6d6d6);
-    
-    @for $i from 3 to 1 {
-    &:nth-child(#{$i}) {
-            animation-delay: 100ms/$i;
-        }              
-    }
-
+ 
     &:hover {
         .section_animation {
             margin-right: 0px;
@@ -650,7 +666,6 @@ section h3 {
 .section_text {
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-right: 10px;
     display: flex;
     flex-direction: column;
     text-align: initial;
@@ -670,24 +685,26 @@ section h3 {
         font-weight: 300;
         margin: 0;
         text-overflow: ellipsis;
-        overflow: hidden;
         white-space: nowrap;
+        overflow: hidden;
         padding-bottom: 6px;
     }
 }
 
 .section_animation {
     display: flex;
-    align-items: flex-end;
     margin-right: -8rem;
-    overflow: hidden;
     transition: all 500ms;
 
     .animation_price {
         font-weight: bold;
-        margin: 0 20px 25px 0;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
         text-align: center;
         font-size: 14px;
+        margin: 0px 28px 0px 0px;
     }
 }
 
@@ -722,10 +739,11 @@ section h3 {
         width: 330px;
     }
 }
+
 @media only screen and (min-width:768px) {
 
     #exploration a {
-        width: 75%
+        width: 45%
     }
     
         .sections {
@@ -736,7 +754,7 @@ section h3 {
     }
 
     .pages_img {
-        height: 280px;
+        height: 352px;
         width: 100%;
         object-fit: cover;
         position: relative;
