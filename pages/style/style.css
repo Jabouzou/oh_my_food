@@ -947,11 +947,11 @@ section h3 {
 }
 
 #section2 {
-  animation: appear_scale 1.5s;
+  animation: appear_scale 2.5s;
 }
 
 #section3 {
-  animation: appear_scale 2s;
+  animation: appear_scale 5s;
 }
 
 .un {
@@ -959,15 +959,15 @@ section h3 {
 }
 
 .deux {
-  animation: appear_scale 1.25s;
-}
-
-.trois {
   animation: appear_scale 1.5s;
 }
 
+.trois {
+  animation: appear_scale 2s;
+}
+
 .quatre {
-  animation: appear_scale 1.75s;
+  animation: appear_scale 2.5s;
 }
 
 .section_animation {
