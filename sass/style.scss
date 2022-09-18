@@ -207,7 +207,7 @@ label {
     background: #eaeaea;
     font-weight: bold;
     text-align: center;
-    width: 40%;
+    width: 35%;
 }
 
 @media only screen and (min-width:768px) {
@@ -274,7 +274,7 @@ header > nav {
 
 
 .exploration_button {
-    width: 43%;
+    width: 50%;
     font-size: 1.4rem;
     margin: 22px 0 40px;
     @extend %btn-style;
@@ -304,7 +304,7 @@ header > nav {
     flex-direction: column;
 
     ul {
-        margin-left: 16px;
+        margin-left: 22px;
     }
 
     ul > li {
